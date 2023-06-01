@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "postinstall": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +49,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
-    "typescript": "~5.0.2"
+    "typescript": "~5.0.2",
+    "husky": "^8.0.0"
   }
 }
