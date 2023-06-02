@@ -1,5 +1,5 @@
 import { MockBuilder, MockRender, MockedComponentFixture } from 'ng-mocks'
-import { TodosListComponent } from './todos-list.component'
+import { TodosListComponent } from '../page/todos-list/todos-list.component'
 
 describe('TodosListComponent', () => {
   let fixture: MockedComponentFixture<TodosListComponent, TodosListComponent>
