@@ -4,6 +4,9 @@
  */
 
 export default {
+  preset: 'jest-preset-angular',
+  setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+  globalSetup: 'jest-preset-angular/global-setup',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -161,9 +164,7 @@ export default {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/e2e/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

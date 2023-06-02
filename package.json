@@ -31,6 +31,7 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-builders/jest": "^16.0.0",
     "@angular-devkit/build-angular": "^16.0.3",
     "@angular-eslint/builder": "16.0.3",
     "@angular-eslint/eslint-plugin": "16.0.3",
@@ -56,6 +57,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "husky": "^8.0.0",
     "jest-environment-jsdom": "^29.5.0",
+    "jest-preset-angular": "^13.1.1",
     "ng-mocks": "^14.10.1",
     "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
