@@ -3,5 +3,14 @@ import { provideRouter } from '@angular/router'
 import { AppComponent } from './app/app.component'
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter([])],
+  providers: [
+    provideRouter([
+      { path: '', redirectTo: '/todos', pathMatch: 'full' },
+      {
+        path: 'todos',
+        pathMatch: 'prefix',
+        loadChildren: () => import('./app/modules/todos/infrastructure/todos.routes').then(m => m.TODOS_ROUTES),
+      },
+    ]),
+  ],
 })

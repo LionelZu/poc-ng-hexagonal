@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["projects/**/*"],
+  "ignorePatterns": ["src/index.html"],
   "overrides": [
     {
       "files": ["*.ts"],
@@ -32,7 +32,7 @@
       }
     },
     {
-      "files": ["*.html"],
+      "files": ["src/app/*.html"],
       "extends": [
         "plugin:prettier/recommended",
         "plugin:@angular-eslint/template/recommended",
@@ -46,6 +46,10 @@
           }
         ]
       }
+    },
+    {
+      "files": ["app/index.html"],
+      "extends": ["plugin:prettier/recommended"]
     }
   ]
 }
