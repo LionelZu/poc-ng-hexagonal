@@ -6,6 +6,12 @@
     "example-project": {
       "projectType": "application",
       "schematics": {
+        "@ngx-storybook/schematics": {
+          "style": "scss",
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "standalone": true
+        },
         "@schematics/angular:component": {
           "style": "scss",
           "inlineStyle": true,
@@ -112,6 +118,6 @@
   },
   "cli": {
     "analytics": "99708293-ba07-4be1-89ef-12350dfc7f30",
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": ["@ngx-storybook/schematics", "@angular-eslint/schematics"]
   }
 }
