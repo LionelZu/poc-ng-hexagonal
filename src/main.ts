@@ -1,6 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser'
 import { provideRouter } from '@angular/router'
 import { AppComponent } from './app/app.component'
+import { InMemoryTodoRepository } from './app/modules/todos/infrastructure/todo-inmemory.repository'
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -12,5 +13,6 @@ bootstrapApplication(AppComponent, {
         loadChildren: () => import('./app/modules/todos/infrastructure/todos.routes').then(m => m.TODOS_ROUTES),
       },
     ]),
+    { provide: 'TODO_REPOSITORY', useClass: InMemoryTodoRepository },
   ],
 })

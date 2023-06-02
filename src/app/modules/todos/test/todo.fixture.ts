@@ -1,8 +1,8 @@
 import { TooLongError, TooMoreTagsError } from '../application/errors'
 import { CreateTodoCommande, CreateTodoUseCase } from '../application/usecase/create-todo.usecase'
 import { ViewTodoUsecase, ViewTodoUsecaseCommande } from '../application/usecase/view-todo.usecase'
+import { InMemoryTodoRepository } from '../infrastructure/todo-inmemory.repository'
 import { Todo } from '../models/todo'
-import { InMemoryTodoRepository } from './todo-inmemory.repository'
 
 class TodoFixture {
   private error: unknown | undefined

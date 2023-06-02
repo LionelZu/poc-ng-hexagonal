@@ -1,6 +1,10 @@
+import { Injectable } from '@angular/core'
 import { TodoRepository } from '../application/todo.repository'
 import { Todo } from '../models/todo'
 
+@Injectable({
+  providedIn: 'root',
+})
 export class InMemoryTodoRepository implements TodoRepository {
   private todos: Todo[] = []
 

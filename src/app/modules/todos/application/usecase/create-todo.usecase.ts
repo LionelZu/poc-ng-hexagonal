@@ -1,3 +1,4 @@
+import { Inject, Injectable } from '@angular/core'
 import { TooLongError, TooMoreTagsError } from '../errors'
 import { TodoRepository } from '../todo.repository'
 
@@ -6,8 +7,11 @@ export type CreateTodoCommande = {
   tags?: string[]
 }
 
+@Injectable({
+  providedIn: 'root',
+})
 export class CreateTodoUseCase {
-  constructor(private todoRepository: TodoRepository) {}
+  constructor(@Inject('TODO_REPOSITORY') private todoRepository: TodoRepository) {}
 
   static readonly MAX_DESCRIPTION_LENGTH = 250
   static readonly MAX_TAGS = 3

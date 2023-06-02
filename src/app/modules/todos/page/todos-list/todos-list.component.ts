@@ -1,10 +1,25 @@
 import { CommonModule } from '@angular/common'
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { CardComponent } from 'src/app/modules/design/molecules/card/card.component'
+import { CreateTodoUseCase } from '../../application/usecase/create-todo.usecase'
+import { ViewTodoUsecase } from '../../application/usecase/view-todo.usecase'
+import { Todo } from '../../models/todo'
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
-  template: ` <p>todos-list works!</p> `,
+  imports: [CommonModule, CardComponent],
+  template: ` <app-card *ngFor="let todo of todos">
+    <div card-content>{{ todo.description }}</div>
+  </app-card>`,
   styles: [],
 })
-export class TodosListComponent {}
+export class TodosListComponent implements OnInit {
+  todos: Todo[] = []
+
+  constructor(private viewTodo: ViewTodoUsecase, private createTodo: CreateTodoUseCase) {}
+
+  async ngOnInit(): Promise<void> {
+    await this.createTodo.handle({ description: 'Nouvelle tâche' })
+    this.todos = await this.viewTodo.handle({})
+  }
+}

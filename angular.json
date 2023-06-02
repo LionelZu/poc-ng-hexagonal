@@ -6,7 +6,7 @@
     "example-project": {
       "projectType": "application",
       "schematics": {
-        "@ngx-storybook/schematics": {
+        "@ngx-storybook/schematics:component": {
           "style": "scss",
           "inlineStyle": true,
           "inlineTemplate": true,
