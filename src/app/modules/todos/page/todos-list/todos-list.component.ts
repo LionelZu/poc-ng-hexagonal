@@ -19,7 +19,6 @@ export class TodosListComponent implements OnInit {
   constructor(private viewTodo: ViewTodoUsecase, private createTodo: CreateTodoUseCase) {}
 
   async ngOnInit(): Promise<void> {
-    await this.createTodo.handle({ description: 'Nouvelle tâche' })
     this.todos = await this.viewTodo.handle({})
   }
 }
